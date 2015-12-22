@@ -20,7 +20,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   });
 
-  CB.CloudApp.init('ionicquickstart','5Ps1MDGRr4Nlq6yuNXB7Dg==');
+  CB.CloudApp.init('social123','94uJjg69+Vgo4jc6+lySMg==');
 
 })
 

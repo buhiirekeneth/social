@@ -1,7 +1,7 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope,$rootScope) { 
-  
+.controller('DashCtrl', function($scope,$rootScope, $ionicPopup) {
+
 
   $scope.savePost = function(text){
     var post = new CB.CloudObject('Feed');
@@ -33,8 +33,9 @@ angular.module('starter.controllers', [])
       query.orderByDesc('createdBy');
       query.find({
         success : function(list){
-            //list is an array of CloudObject. 
+            //list is an array of CloudObject.
             $scope.posts = list;
+            console.log($scope.posts);
 
             $scope.$digest();
         }, error : function(error){
@@ -46,7 +47,7 @@ angular.module('starter.controllers', [])
             ]
           });
         }
-      });     
+      });
 
   }
 
@@ -60,7 +61,7 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  
+
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
     Chats.remove(chat);
